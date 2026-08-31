@@ -1,0 +1,91 @@
+# ==========================================
+# Python
+# ==========================================
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# ==========================================
+# Testing
+# ==========================================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.pytype/
+
+# ==========================================
+# IDE / Editors
+# ==========================================
+
+# Visual Studio Code
+.vscode/
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+
+# Visual Studio
+.vs/
+
+# ==========================================
+# Operating System Files
+# ==========================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# ==========================================
+# Environment / Secrets
+# ==========================================
+
+.env
+.env.*
+*.env
+
+# ==========================================
+# Logs
+# ==========================================
+
+*.log
+logs/
+
+# ==========================================
+# CommandPilot Future Cache / Runtime Files
+# ==========================================
+
+.cache/
+cache/
+data/
+*.db
+*.sqlite
+*.sqlite3
