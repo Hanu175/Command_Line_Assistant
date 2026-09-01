@@ -1,6 +1,9 @@
 import sys
 
-from core.discovery import find_matching_commands
+from core.registry import CommandRegistry
+
+
+registry = CommandRegistry()
 
 
 def main():
@@ -12,7 +15,7 @@ def main():
     partial_command = sys.argv[2]
 
     if action == "complete":
-        matches = find_matching_commands(partial_command)
+        matches = registry.find(partial_command)
 
         for command in matches:
             print(command)
