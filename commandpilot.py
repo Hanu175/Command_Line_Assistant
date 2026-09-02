@@ -1,19 +1,26 @@
 import sys
 
 from core.registry import CommandRegistry
+from core.completion_engine import CompletionEngine
 
 
 registry = CommandRegistry()
+engine = CompletionEngine()
 
 
 def main():
     if len(sys.argv) < 2:
         print("Usage:")
         print("  python commandpilot.py complete <partial-command>")
+        print("  python commandpilot.py suggest <command-line>")
         print("  python commandpilot.py refresh")
         return
 
     action = sys.argv[1]
+
+    # -----------------------------------------
+    # Command discovery
+    # -----------------------------------------
 
     if action == "complete":
 
@@ -30,6 +37,33 @@ def main():
 
         for command in matches:
             print(command)
+
+    # -----------------------------------------
+    # Context-aware completion
+    # -----------------------------------------
+
+    elif action == "suggest":
+
+        if len(sys.argv) < 3:
+            print(
+                "Usage: "
+                'python commandpilot.py suggest "command line"'
+            )
+            return
+
+        command_line = " ".join(sys.argv[2:])
+
+        suggestions = engine.complete(command_line)
+
+        if suggestions:
+            for suggestion in suggestions:
+                print(suggestion)
+        else:
+            print("No suggestions found.")
+
+    # -----------------------------------------
+    # Refresh command registry
+    # -----------------------------------------
 
     elif action == "refresh":
 
