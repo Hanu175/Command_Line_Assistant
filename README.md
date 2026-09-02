@@ -1,7 +1,7 @@
 # Command_Line_Assistant
  
 Cross-platform CLI completion and documentation engine — bringing Linux-style command completion and unified documentation support to Windows, macOS, and Linux.
- 
+
 > **Project Name:** CommandPilot
  
 ---
